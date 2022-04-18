@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+        .stepper__item {
+            position: relative;
+            display: flex;
+            gap: 1rem;
+            padding-bottom: 4rem;
+        }
+
+        .stepper__item:before {
+            --size: 3rem;
+            content: "";
+            position: relative;
+            z-index: 1;
+            flex: 0 0 var(--size);
+            height: var(--size);
+            border-radius: 50%;
+            background-color: lightgrey;
+        }
+
+        .stepper__item:not(:last-child):after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateX(1.5rem);
+            width: 2px;
+            height: 100%;
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <ol class="stepper">
+            <li class="stepper__item">
+                <h3>Step 1</h3>
+                <p>入力</p>
+            </li>
+            <li class="stepper__item">
+                <h3>Step 2</h3>
+                <p>確認</p>
+            </li>
+            <li class="stepper__item">
+                <h3>Step 3</h3>
+                <p>完了</p>
+            </li>
+        </ol>
+    </div>
+
+</body>
+
+</html>
